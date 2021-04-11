@@ -24,7 +24,7 @@ class Task2Case(unittest.TestCase):
         chrome_options = webdriver.ChromeOptions()
         #chrome_options.add_argument("--headless")
         #chrome_options.add_argument('--no-sandbox')
-        self.driver = webdriver.Chrome('http://localhost:4444/wd/hub', options=chrome_options)
+        self.driver = webdriver.Remote('http://localhost:4444/wd/hub', options=chrome_options)
         #self.driver = webdriver.Chrome()
 
     def tearDown(self):
