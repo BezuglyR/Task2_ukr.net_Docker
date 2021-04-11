@@ -14,4 +14,4 @@ EXPOSE 4444:4444
 
 RUN sudo pip2 install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT python2 -m unittest
+ENTRYPOINT python -m unittest -v test_mail
