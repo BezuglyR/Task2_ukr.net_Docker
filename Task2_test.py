@@ -10,6 +10,7 @@
  6. Delete all mails except last one.'''
 
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from time import sleep
 import unittest
 import random
@@ -21,12 +22,9 @@ password = 'ababagalamaga87'
 
 class Task2Case(unittest.TestCase):
     def setUp(self):
-        chrome_options = webdriver.ChromeOptions()
-        #chrome_options.add_argument("--headless")
-        #chrome_options.add_argument('--no-sandbox')
-        self.driver = webdriver.Remote('http://localhost:4444/wd/hub', options=chrome_options)
+        driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", DesiredCapabilities.CHROME)
         #self.driver = webdriver.Chrome()
-
+     
     def tearDown(self):
         self.driver.close()
 
