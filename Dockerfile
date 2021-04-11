@@ -13,4 +13,4 @@ EXPOSE 4444:4444
 
 RUN sudo pip2 install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT  sudo python2 testCase_testTask2.py
+ENTRYPOINT python2 testCase_testTask2.py
