@@ -48,6 +48,7 @@ class Task2Case(unittest.TestCase):
 
         # Step 2 --- Sending mails self
         inbox = len(driver.find_elements_by_xpath('//div[@class="screen__content"]//tbody/tr/td[4]/a'))  # Inbox quantity
+        sleep(5)
         driver.find_element_by_xpath('//div[@id="content"]/aside/button').click()
         for a in range(3):  # Inserting data by loop 3 mails
             # Creating random values
