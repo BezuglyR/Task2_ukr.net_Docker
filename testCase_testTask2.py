@@ -105,3 +105,4 @@ class testTask2(unittest.TestCase):
         driver.find_element_by_xpath('//div[@id="msglist"]/div[2]//tbody/tr/td').click()  # Click to uncheck last mail
         driver.find_element_by_xpath('//div[@id="msglist"]/div/div/div[2]/a[2]').click()  # Click delete
         sleep(3)
+        print('TestCase PASS')
