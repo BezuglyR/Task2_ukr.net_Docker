@@ -7,6 +7,6 @@ WORKDIR /usr/src/app
 VOLUME /dev/shm:/dev/shm
 EXPOSE 4444:4444
 
-RUN sudo pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 ENTRYPOINT  python testCase_testTask2.py
