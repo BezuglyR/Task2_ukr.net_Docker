@@ -1,3 +1,5 @@
+docker build -t bezugly_task https://github.com/BezuglyR/Task2_with_Docker.git#main
+
 Test Case Steps:
  1. Login into mail
  2. Send 15 mails to self mail(from step 1). Subject random 10 length string witch contains letters and numbers.
