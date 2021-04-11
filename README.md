@@ -1,4 +1,4 @@
-docker build -t bezugly_task https://github.com/BezuglyR/Task2_ukr_Docker.net.git#main
+docker build -t bezugly_task https://github.com/BezuglyR/Task2_ukr.net_Docker.git#main
 
 Test Case Steps:
  1. Login into mail
