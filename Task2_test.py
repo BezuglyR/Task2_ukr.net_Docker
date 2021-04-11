@@ -18,7 +18,7 @@ import string
 login = 'romiktest'
 password = 'ababagalamaga87'
 
-class testTask2(unittest.TestCase):
+class Task2Case(unittest.TestCase):
     def setUp(self):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--no-sandbox')
@@ -30,7 +30,7 @@ class testTask2(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test(self):
+    def test_mail(self):
         driver = self.driver
 
     # Step 1 --- Login mail
