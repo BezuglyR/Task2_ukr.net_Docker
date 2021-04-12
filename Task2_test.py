@@ -78,8 +78,8 @@ class Task2Case(unittest.TestCase):
 
         # Step 3 --- If all sent mails received
         # In step 2, first of all we check inbox mails quantity before send. On this step we check difference after send.
-        new_inbox = len(driver.find_elements_by_xpath('//div[@class="screen__content"]//tbody/tr/td[4]/a'))
         sleep(3)
+        new_inbox = len(driver.find_elements_by_xpath('//div[@class="screen__content"]//tbody/tr/td[4]/a'))
         self.assertEqual(new_inbox - 15, inbox)  # new check inbox minus mails to send must be equal to first check inbox
 
         # Step 4 --- Collect mails data from main page
