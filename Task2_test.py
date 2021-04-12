@@ -23,11 +23,10 @@ class Task2Case(unittest.TestCase):
     def setUp(self):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--window-size=1420,1080')
-        #chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--window-size=1920,1080')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('user-agent=User-Agent: Chrome/89.0.4389.114')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
-        #self.driver = webdriver.Chrome()
      
     def tearDown(self):
         self.driver.close()
@@ -37,14 +36,14 @@ class Task2Case(unittest.TestCase):
         driver.implicitly_wait(15)
         # Step 1 --- Login mail
         driver.get('https://accounts.ukr.net/')
-        # self.assertIn('Mail @ ukr.net', driver.title)  # Check if page opened
+        self.assertIn(' @ ukr.net', driver.title)  # Check if page opened
         driver.find_element_by_xpath('//body//button[3]/span[2]').click()  # Switch to English language
         driver.find_element_by_xpath('//form/div//input').send_keys(login)  # Input login
         driver.find_element_by_xpath('//form/div[2]//input').send_keys(password)  # Input password
         driver.find_element_by_xpath('//form/div[3]//input').click()  # Click to check "Public computer"
         driver.find_element_by_xpath('//form/button').click()  # Click next button
         sleep(3)
-        # self.assertIn(login + '@ukr.net', driver.title) # Check if log in
+        self.assertIn(login + '@ukr.net', driver.title) # Check if log in
 
         # Step 2 --- Sending mails self
         inbox = len(driver.find_elements_by_xpath('//div[@class="screen__content"]//tbody/tr/td[4]/a'))  # Inbox quantity
@@ -80,6 +79,7 @@ class Task2Case(unittest.TestCase):
         # Step 3 --- If all sent mails received
         # In step 2, first of all we check inbox mails quantity before send. On this step we check difference after send.
         new_inbox = len(driver.find_elements_by_xpath('//div[@class="screen__content"]//tbody/tr/td[4]/a'))
+        sleep(1)
         self.assertEqual(new_inbox - 3, inbox)  # new check inbox minus mails to send must be equal to first check inbox
 
         # Step 4 --- Collect mails data from main page
