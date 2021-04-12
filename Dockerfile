@@ -1,6 +1,6 @@
 FROM bezuglyr/pyhon2.7-chrome
 
-RUN sudo mkdir /usr/src/app
+RUN mkdir /usr/src/app
 ADD . /usr/src/app/
 WORKDIR /usr/src/app
 
