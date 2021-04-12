@@ -11,6 +11,7 @@
 
 from selenium import webdriver
 from time import sleep
+import chromedriver_binary
 import unittest
 import random
 import string
