@@ -1,4 +1,5 @@
 To build :: docker build -t bezugly_task https://github.com/BezuglyR/Task2_ukr.net_Docker.git#main
+
 To run   :: docker run -it bezugly_task bash
 
 Test Case Steps:
